@@ -1,13 +1,10 @@
-const http = require('http');
+const http = require('http')
+const port = 3000
 
-const port = 3000;
+const server = http.createServer((request, response) => {
+  response.end("Hello Nodejs")
+})
 
-const server = http.createServer((req, res) =>{
-    res.statusCode = 200;
-    res.setHeader('Content=Type', 'text/plain');
-    res.end("Hola Mundo");
-});
-
-server.listen(port, () =>{
-    console.log(`Nodejs running on PORT ${port}`);
-});
+server.listen(port, () => {
+  console.log(`Nodejs running on PORT ${port}`)
+})
